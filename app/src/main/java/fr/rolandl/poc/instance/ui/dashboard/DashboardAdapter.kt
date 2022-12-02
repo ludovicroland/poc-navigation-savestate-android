@@ -11,10 +11,16 @@ class DashboardAdapter(fragment: FragmentManager, lifecycle: Lifecycle) :
   FragmentStateAdapter(fragment, lifecycle)
 {
 
+  private var list = emptyList<Int>()
+
   override fun getItemCount(): Int =
-    5
+    list.size
 
   override fun createFragment(position: Int): Fragment =
     ItemFragment()
 
+  fun updateList(list: List<Int>) {
+    this.list = list
+    notifyDataSetChanged()
+  }
 }
