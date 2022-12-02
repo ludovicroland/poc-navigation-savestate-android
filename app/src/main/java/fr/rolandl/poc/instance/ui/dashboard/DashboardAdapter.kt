@@ -2,11 +2,13 @@ package fr.rolandl.poc.instance.ui.dashboard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import fr.rolandl.poc.instance.ui.recycler.ItemFragment
 
-class DashboardAdapter(fragment: Fragment) :
-  FragmentStateAdapter(fragment)
+class DashboardAdapter(fragment: FragmentManager, lifecycle: Lifecycle) :
+  FragmentStateAdapter(fragment, lifecycle)
 {
 
   override fun getItemCount(): Int =

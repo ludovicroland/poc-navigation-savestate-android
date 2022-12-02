@@ -33,7 +33,7 @@ class DashboardFragment : Fragment()
     _binding = FragmentDashboardBinding.inflate(inflater, container, false)
     val root: View = binding.root
 
-    adapter = DashboardAdapter(this)
+    adapter = DashboardAdapter(childFragmentManager, viewLifecycleOwner.lifecycle)
     _binding?.viewPager?.adapter = adapter
 
     _binding?.let {
